@@ -7,6 +7,13 @@ function SpecificDate(data) {
   const [imgData, setImgData] = useState(null)
   const [pic, setPic] = useState();
 
+  if (data === null) {
+    const [cityname, setcityname] = useState(data.name)
+    const [temperature, setTemperature] = useState(data.main.temp)
+    const [humidity, setHumidity] = useState(data.main.humidity)
+    const [wind, setWind] = useState(data.wind.speed)
+  }
+
   function callImg() {
     if (imgData === null) {
       setImgData("birmingham")
@@ -19,11 +26,6 @@ function SpecificDate(data) {
   console.log(imgData)
   const imageURL = `https://api.unsplash.com/search/photos?query=${imgData}&client_id=cVY9k44QlpVuhp5EyI8L7jHK2TppaDn-vwCc2MPkIlg`
   // console.log(imgData);
-  const cityname = "Birmingham"
-  const temperature = "20"
-  const humidity = "60"
-  const wind = "10"
-  const precipation = "50"
 
   async function fetchImageAPI() {
     callImg()
@@ -47,7 +49,6 @@ function SpecificDate(data) {
         cityname={cityname}
         humidity={humidity}
         wind={wind}
-        precipation={precipation}
       />
     </div>
   );

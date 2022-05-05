@@ -3,7 +3,7 @@
 //styling
 import InfoStyling from "./WeatherInfoCSS.module.css";
 
-function WeatherInfo({ temperature, cityname, humidity, wind, precipation }) {
+function WeatherInfo({ temperature, cityname, humidity, wind }) {
   return (
     <div>
       {/* container for weather info */}
@@ -11,7 +11,6 @@ function WeatherInfo({ temperature, cityname, humidity, wind, precipation }) {
       <h2 className={InfoStyling.cityname}>{cityname}</h2>
       <p className={InfoStyling.humidity}>Humidity: {humidity}%</p>
       <p className={InfoStyling.windSpeed}>Wind: {wind} MPH</p>
-      <p className={InfoStyling.precipitation}>Precipitation: {precipation}%</p>
     </div>
   );
 }
