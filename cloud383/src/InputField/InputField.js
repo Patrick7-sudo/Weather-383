@@ -1,12 +1,17 @@
-export default function InputField({ text, img, onClick, onChange }) {
+import css from "./InputField.module.css";
+
+export default function InputField({ text, onClick, onChange }) {
   return (
-    <div>
+    <div className={css.container}>
       <input
+        className={css.input}
         type={text}
-        placeholder="Search another location"
+        placeholder="Change location..."
         onChange={onChange}
       />
-      <button onClick={onClick}>{img}</button>
+      <button className={css.button} onClick={onClick}>
+        Search
+      </button>
     </div>
   );
 }

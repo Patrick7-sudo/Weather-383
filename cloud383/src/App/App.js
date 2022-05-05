@@ -1,18 +1,10 @@
 import "./App.css";
-import { useEffect, useState } from "react";
-import InputField from "../InputField/InputField.js";
+import DailyView from "../DailyView/DailyView.js";
 
 function App() {
-  const [inputField, setInputField] = useState("");
-
-  const onChange = (e) => {
-    console.log(e.target.value);
-    setInputField(e.target.value);
-  };
-
   return (
     <div className="App">
-      <InputField onChange={onChange} text={inputField} />
+      <DailyView />
     </div>
   );
 }
