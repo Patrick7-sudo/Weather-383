@@ -10,3 +10,4 @@ To run the app use npm run start, you can then use the search function to look u
 - [@AmandaRichards](https://github.com/AmandaRichards)
 - [@Rubengon84](https://github.com/Rubengon84)  
 - [@waynethrower](https://github.com/waynethrower)
+- [@sandraskolarczyk](https://github.com/sandiskolarczyk)
