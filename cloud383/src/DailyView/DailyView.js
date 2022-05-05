@@ -4,12 +4,11 @@ import SpecificDate from "../SpecificDate/SpecificDate.js";
 
 import { useEffect, useState } from "react";
 
-export default function DailyView({ location, onClick }) {
-  const [inputField, setInputField] = useState("");
+export default function DailyView({ onClick, onChange, inputField }) {
+  // const [inputField, setInputField] = useState("");
   const [date, setDate] = useState("");
   const [weatherData, setWeatherData] = useState({});
 
-  location(inputField);
 
   const url = `https://api.openweathermap.org/data/2.5/weather?q=london&units=metric&appid=895284fb2d2c50a520ea537456963d9c`;
 
@@ -49,11 +48,6 @@ export default function DailyView({ location, onClick }) {
   useEffect(() => {
     calendarDate();
   });
-
-  const onChange = (e) => {
-    console.log(e.target.value);
-    setInputField(e.target.value);
-  };
 
   return (
     <div>

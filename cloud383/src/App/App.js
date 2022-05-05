@@ -6,13 +6,21 @@ import { WeeklyView } from "../WeeklyView/WeeklyView.js";
 function App() {
   const [cordenates, setCordenates] = useState(false);
   const [dataWeather, setDataWeather] = useState();
-  const [location, setLocation] = useState("");
-  console.log(location);
+  // const [location, setLocation] = useState("");
+  const [inputField, setInputField] = useState("");
+  console.log(inputField);
+  // console.log(location);
   const [clicked, setClicked] = useState(false);
+  console.log(clicked);
 
-  function inputLocation(location) {
-    setLocation(location);
-  }
+   const onChange = (e) => {
+     console.log(e.target.value);
+     setInputField(e.target.value);
+   };
+
+  // function inputLocation(location) {
+  //   setLocation(location);
+  // }
 
   function onClick() {
     setClicked(true);
@@ -20,7 +28,7 @@ function App() {
 
   console.log(dataWeather);
   // Api-url to get the coordinates
-  const url = `http://api.openweathermap.org/geo/1.0/direct?q=${location}&limit=1&appid=895284fb2d2c50a520ea537456963d9c`;
+  const url = `http://api.openweathermap.org/geo/1.0/direct?q=${inputField}&limit=1&appid=895284fb2d2c50a520ea537456963d9c`;
   // Api-url to get the weather
   const url2 = `http://api.openweathermap.org/data/2.5/onecall?lat=${cordenates.lat}&lon=${cordenates.lon}&units=metric&appid=895284fb2d2c50a520ea537456963d9c`;
 
@@ -33,8 +41,9 @@ function App() {
     }
     if (clicked) {
       fetchAPI();
+      setClicked(false);
     }
-  }, [url]);
+  }, [url,clicked,setClicked]);
 
   // useEffect for getting the 8 days weather data
   useEffect(() => {
@@ -51,7 +60,7 @@ function App() {
 
   return (
     <div className="App">
-      <DailyView location={inputLocation} onClick={onClick} />
+      <DailyView onClick={onClick} onChange={onChange} inputField={inputField}/>
       <WeeklyView dataWeather={dataWeather} />
     </div>
   );
