@@ -1,12 +1,15 @@
 # Cloud-383
 
-Welcome to our weather app created as part of the 383 hackathon. You can use our app to search by location and discover the weather both today and for the next 7 days.
+Welcome to our weather app created as part of the 383 hackathon!
+You can use our app to search by location and discover the weather both today and for the next 7 days.
 
-This is a React app created using the Open Weather API.
+This is a React app created using the [Open Weather API](https://openweathermap.org/api).
+
+You can view it deployed on Netlify here 👉 [Cloud383 App](https://6273ea804411206d6e57606a--cloud383.netlify.app/)
 
 ## Getting Started
 
-This will install all the necesary packages to run our app in your local machine.
+Go through the following steps to install all the neccessary packages to run our app in your local machine.
 
 - 1️⃣ `git clone https://github.com/tasniimbari/Weather-383`
 - 2️⃣ `cd cloud383 `
