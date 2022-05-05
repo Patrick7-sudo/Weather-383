@@ -2,8 +2,9 @@ import { useEffect, useState } from "react";
 import WeatherInfo from "../WeatherInfo/WeatherInfo";
 import styles from "./SpecificDate.module.css";
 
-function SpecificDate(data) {
-  const currentBase = data;
+function SpecificDate(weatherData) {
+  console.log(weatherData)
+  const currentBase = weatherData;
   const [imgData, setImgData] = useState(null);
   const [pic, setPic] = useState();
 
@@ -17,16 +18,16 @@ function SpecificDate(data) {
       setImgData("birmingham");
     } else {
       const locationEntered = currentBase.weatherData.name;
-      setCityName(data.name);
-      setTemperature(data.main.temp);
-      setHumidity(data.main.humidity);
-      setWind(data.wind.speed);
+      setCityName(weatherData.name);
+      setTemperature(weatherData.main.temp);
+      setHumidity(weatherData.main.humidity);
+      setWind(weatherData.wind.speed);
       setImgData(locationEntered);
     }
   }
 
   console.log(imgData);
-  const imageURL = `https://api.unsplash.com/search/photos?query=${imgData}&client_id=cVY9k44QlpVuhp5EyI8L7jHK2TppaDn-vwCc2MPkIlg`;
+  const imageURL = `https://api.unsplash.com/search/photos?query=London&client_id=cVY9k44QlpVuhp5EyI8L7jHK2TppaDn-vwCc2MPkIlg`;
   // console.log(imgData);
 
   async function fetchImageAPI() {
