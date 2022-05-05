@@ -1,5 +1,6 @@
 import "./App.css";     
 import {useEffect, useState} from 'react';
+import DailyView from "../DailyView/DailyView.js";
 import { WeeklyView } from "../WeeklyView/WeeklyView.js";
 
 
@@ -42,6 +43,7 @@ useEffect(() => {
 
   return (
     <div className="App">
+      <DailyView />
     <WeeklyView dataWeather={dataWeather} />  
     </div>
   );
