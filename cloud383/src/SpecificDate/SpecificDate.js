@@ -1,52 +1,54 @@
-import { useEffect, useState } from "react"
-import WeatherInfo from "../WeatherInfo/WeatherInfo"
-import styles from "./SpecificDate.module.css"
+import { useEffect, useState } from "react";
+import WeatherInfo from "../WeatherInfo/WeatherInfo";
+import styles from "./SpecificDate.module.css";
 
 function SpecificDate(data) {
-  const currentBase = data
-  const [imgData, setImgData] = useState(null)
+  const currentBase = data;
+  const [imgData, setImgData] = useState(null);
   const [pic, setPic] = useState();
 
-  if (data === null) {
-    const [cityname, setcityname] = useState(data.name)
-    const [temperature, setTemperature] = useState(data.main.temp)
-    const [humidity, setHumidity] = useState(data.main.humidity)
-    const [wind, setWind] = useState(data.wind.speed)
-  }
+  const [cityName, setCityName] = useState("");
+  const [temperature, setTemperature] = useState("");
+  const [humidity, setHumidity] = useState("");
+  const [wind, setWind] = useState("");
 
   function callImg() {
     if (imgData === null) {
-      setImgData("birmingham")
+      setImgData("birmingham");
     } else {
-      const locationEntered = currentBase.weatherData.name
-      setImgData(locationEntered)
+      const locationEntered = currentBase.weatherData.name;
+      setCityName(data.name);
+      setTemperature(data.main.temp);
+      setHumidity(data.main.humidity);
+      setWind(data.wind.speed);
+      setImgData(locationEntered);
     }
   }
 
-  console.log(imgData)
-  const imageURL = `https://api.unsplash.com/search/photos?query=${imgData}&client_id=cVY9k44QlpVuhp5EyI8L7jHK2TppaDn-vwCc2MPkIlg`
+  console.log(imgData);
+  const imageURL = `https://api.unsplash.com/search/photos?query=${imgData}&client_id=cVY9k44QlpVuhp5EyI8L7jHK2TppaDn-vwCc2MPkIlg`;
   // console.log(imgData);
 
   async function fetchImageAPI() {
-    callImg()
-    const response = await fetch(`${imageURL}`)
-    const data = await response.json()
+    callImg();
+    const response = await fetch(`${imageURL}`);
+    const data = await response.json();
     // console.log(data)
     // imgData(data)
     // console.log(data.results[0].urls.raw)
     setPic(data.results[0].urls.raw);
   }
   useEffect(() => {
-    fetchImageAPI()
-  }, [imgData])
+    fetchImageAPI();
+  }, [imgData]);
 
   return (
     <div className={styles.background}>
       {/* fetch background image */}
-      <img className={styles.mainBackground}src={pic} alt='img'/>
+      <img className={styles.mainBackground} src={pic} alt="img" />
       <WeatherInfo
         temperature={temperature}
-        cityname={cityname}
+        cityname={cityName}
         humidity={humidity}
         wind={wind}
       />
@@ -54,4 +56,4 @@ function SpecificDate(data) {
   );
 }
 
-export default SpecificDate
+export default SpecificDate;
