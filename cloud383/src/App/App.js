@@ -1,17 +1,40 @@
 import "./App.css";
-import {useEffect} from 'react';
+import {useEffect, useState} from 'react';
+
 function App() {
-     const url = `https://api.openweathermap.org/data/2.5/weather?q=london&units=metric&appid=895284fb2d2c50a520ea537456963d9c`
-
-
-async function fetchAPI(){
- const response = await fetch(`${url}`);
-  const data = await response.json();
-console.log(data)
-}
+  
+  const [cordenates , setCordenates] = useState({});
+  // Api-url to get the coordinates
+  const url = `http://api.openweathermap.org/geo/1.0/direct?q=London&limit=1&appid=895284fb2d2c50a520ea537456963d9c`;
+  // Api-url to get the weather 
+  const url2 = `http://api.openweathermap.org/data/2.5/onecall?lat=${cordenates.lat}&lon=${cordenates.lon}&units=metric&appid=895284fb2d2c50a520ea537456963d9c`
+  
+  // useEffect for getting the longitud and latitud data
   useEffect(() => {
+
+  async function fetchAPI(){
+  const response = await fetch(`${url}`);
+  const data = await response.json();
+  setCordenates({lat: data[0].lat , lon: data[0].lon})  
+  }
+
   fetchAPI()
-}, [])
+}, [url]);
+
+// useEffect for getting the 8 days weather data
+useEffect(() => {
+  async function weatherData() {
+    const response = await fetch(`${url2}`);
+    const data = await response.json();
+    console.log(data)
+  }
+  if (cordenates) {
+    weatherData()
+  } 
+
+},[cordenates, url2])
+
+
   return (
     <div className="App">
       <header className="App-header"></header>
