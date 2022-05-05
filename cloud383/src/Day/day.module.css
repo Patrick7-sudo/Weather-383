@@ -1,0 +1,43 @@
+.container{
+    justify-content: left space-between;
+    flex-direction: row;
+    background-color: #DEE5F8;
+    border: #000000 px;
+}
+.dayBar{
+    position: absolute;
+    width: 429px;
+    height: 85px;
+}
+
+.day{
+  
+    left: 1rem;
+    top: 723px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    
+    color: #000000;
+   
+    
+}
+
+/* .temp{
+   
+    width: 64.91px;
+    height: 48px;
+    left: 327px;
+    top: 709px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    
+    color: #000000;
+
+} */

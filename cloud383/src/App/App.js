@@ -1,5 +1,6 @@
 import "./App.css";
 import {useEffect} from 'react';
+import { Day } from "../Day/Day";
 function App() {
      const url = `https://api.openweathermap.org/data/2.5/weather?q=london&units=metric&appid=895284fb2d2c50a520ea537456963d9c`
 
@@ -15,6 +16,8 @@ console.log(data)
   return (
     <div className="App">
       <header className="App-header"></header>
+      <Day day={`Monday`} temp={5} />
+      
     </div>
   );
 }
