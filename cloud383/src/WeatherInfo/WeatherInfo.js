@@ -1,7 +1,7 @@
 // import { useEffect, useState } from "react"
 
 //styling
-import InfoStyling from "./WeatherInfoCSS.module.css"
+import InfoStyling from "./WeatherInfoCSS.module.css";
 
 function WeatherInfo({ temperature, cityname, humidity, wind, precipation }) {
   return (
@@ -9,11 +9,11 @@ function WeatherInfo({ temperature, cityname, humidity, wind, precipation }) {
       {/* container for weather info */}
       <p className={InfoStyling.temperature}>{temperature}°C</p>
       <h2 className={InfoStyling.cityname}>{cityname}</h2>
-      <p className={InfoStyling.humidity}>Humiditiy: {humidity}%</p>
+      <p className={InfoStyling.humidity}>Humidity: {humidity}%</p>
       <p className={InfoStyling.windSpeed}>Wind: {wind} MPH</p>
       <p className={InfoStyling.precipitation}>Precipitation: {precipation}%</p>
     </div>
-  )
+  );
 }
 
-export default WeatherInfo
+export default WeatherInfo;
