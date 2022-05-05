@@ -12,4 +12,4 @@ This is a React app created using the Open Weather API.
 - [@AmandaRichards](https://github.com/AmandaRichards)
 - [@Rubengon84](https://github.com/Rubengon84)  
 - [@waynethrower](https://github.com/waynethrower)
-- [@sandraskolarczyk](https://github.com/sandiskolarczyk)
+- [@sandiskolarczyk](https://github.com/sandiskolarczyk)
