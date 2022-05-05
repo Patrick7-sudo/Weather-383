@@ -6,10 +6,10 @@ import { WeeklyView } from "../WeeklyView/WeeklyView.js";
 function App() {
   const [cordenates, setCordenates] = useState(false);
   const [dataWeather, setDataWeather] = useState();
-  // const [location, setLocation] = useState("");
+
   const [inputField, setInputField] = useState("");
   console.log(inputField);
-  // console.log(location);
+
   const [clicked, setClicked] = useState(false);
   console.log(clicked);
 
@@ -18,9 +18,6 @@ function App() {
      setInputField(e.target.value);
    };
 
-  // function inputLocation(location) {
-  //   setLocation(location);
-  // }
 
   function onClick() {
     setClicked(true);
