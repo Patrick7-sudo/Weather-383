@@ -1,0 +1,15 @@
+.container {
+  align-items: left;
+  margin: 0px;
+}
+
+.input {
+  border-radius: 100px;
+  width: 12vw;
+  margin: 20px;
+  justify-content: flex-start;
+}
+
+.button {
+  border-radius: 100px;
+}
