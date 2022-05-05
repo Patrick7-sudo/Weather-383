@@ -1,5 +1,11 @@
 import "./App.css";
+
+
+import { Day } from "../Day/Day";
+function App() {
+     
 import {useEffect, useState} from 'react';
+
 
 function App() {
   
@@ -38,6 +44,8 @@ useEffect(() => {
   return (
     <div className="App">
       <header className="App-header"></header>
+      <Day day={`Monday`} temp={5} />
+      
     </div>
   );
 }
