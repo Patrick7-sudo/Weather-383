@@ -1,6 +1,6 @@
 import "./App.css";     
 import {useEffect, useState} from 'react';
-import { WeeklyView } from "../WeeklyView/WeeklyView";
+import { WeeklyView } from "../WeeklyView/WeeklyView.js";
 
 
 function App() {

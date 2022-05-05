@@ -2,7 +2,7 @@ import React from 'react'
 import { DaysList } from '../DaysList/DaysList.js';
 import HoursList from '../HoursList/HoursList.js';
 
-const WeeklyView = ({dataWeather}) => {
+export const WeeklyView = ({dataWeather}) => {
   return (
     <div>
 
