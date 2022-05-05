@@ -1,0 +1,9 @@
+.hourContainer {
+  width: auto;
+  background-color: aliceblue;
+}
+
+.hourContainer img {
+  width: 30vw;
+  height: auto;
+}

@@ -5,7 +5,8 @@ import WeeklyView from "../WeeklyView/WeeklyView.js";
 
 function App() {
   
-  const [cordenates , setCordenates] = useState({});
+  const [cordenates , setCordenates] = useState(false);
+  console.log(cordenates);
   const [dataWeather , setDataWeather] = useState();
   console.log(dataWeather);
   // Api-url to get the coordinates
