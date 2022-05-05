@@ -2,6 +2,7 @@ import CalendarDate from "../CalendarDate/CalendarDate.js";
 import InputField from "../InputField/InputField.js";
 import SpecificDate from "../SpecificDate/SpecificDate.js";
 
+
 import { useEffect, useState } from "react";
 
 export default function DailyView() {
