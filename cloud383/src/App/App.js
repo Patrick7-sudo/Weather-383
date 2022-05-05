@@ -1,4 +1,5 @@
-import "./App.css"
+import "./App.css";
+import DailyView from "../DailyView/DailyView.js";
 import { useEffect,useState } from "react"
 
 //Components
@@ -23,8 +24,10 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header"></header>
+
+      <DailyView />
       <SpecificDate weatherData={weatherData}/>
+
     </div>
   )
 }
