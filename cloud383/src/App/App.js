@@ -1,15 +1,13 @@
-import "./App.css";
-
-
-import { Day } from "../Day/Day";
-function App() {
-     
+import "./App.css";     
 import {useEffect, useState} from 'react';
+import WeeklyView from "../WeeklyView/WeeklyView.js";
 
 
 function App() {
   
   const [cordenates , setCordenates] = useState({});
+  const [dataWeather , setDataWeather] = useState();
+  console.log(dataWeather);
   // Api-url to get the coordinates
   const url = `http://api.openweathermap.org/geo/1.0/direct?q=London&limit=1&appid=895284fb2d2c50a520ea537456963d9c`;
   // Api-url to get the weather 
@@ -32,7 +30,8 @@ useEffect(() => {
   async function weatherData() {
     const response = await fetch(`${url2}`);
     const data = await response.json();
-    console.log(data)
+    setDataWeather(data);
+   // console.log(data)
   }
   if (cordenates) {
     weatherData()
@@ -43,9 +42,7 @@ useEffect(() => {
 
   return (
     <div className="App">
-      <header className="App-header"></header>
-      <Day day={`Monday`} temp={5} />
-      
+    <WeeklyView dataWeather={dataWeather} />  
     </div>
   );
 }
