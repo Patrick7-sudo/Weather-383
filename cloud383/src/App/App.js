@@ -1,11 +1,11 @@
 import "./App.css";     
 import {useEffect, useState} from 'react';
-import WeeklyView from "../WeeklyView/WeeklyView.js";
+import { WeeklyView } from "../WeeklyView/WeeklyView";
 
 
 function App() {
   
-  const [cordenates , setCordenates] = useState({});
+  const [cordenates , setCordenates] = useState(false);
   const [dataWeather , setDataWeather] = useState();
   console.log(dataWeather);
   // Api-url to get the coordinates

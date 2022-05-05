@@ -26,6 +26,19 @@
     
 }
 
+.weather{
+    left: 1rem;
+    top: 723px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    
+    color: #000000;
+}
+
 /* .temp{
    
     width: 64.91px;
