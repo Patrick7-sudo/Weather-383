@@ -27,7 +27,7 @@ function SpecificDate(weatherData) {
   }
 
   console.log(imgData);
-  const imageURL = `https://api.unsplash.com/search/photos?query=London&client_id=cVY9k44QlpVuhp5EyI8L7jHK2TppaDn-vwCc2MPkIlg`;
+  const imageURL = `https://api.unsplash.com/search/photos?query=London`;
   // console.log(imgData);
 
   async function fetchImageAPI() {
